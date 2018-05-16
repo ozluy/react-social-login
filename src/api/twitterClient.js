@@ -3,7 +3,7 @@ import 'firebase/auth'
 
 const provider = new firebase.auth.TwitterAuthProvider()
 
-const facebookClient = () => {
+const twitterClient = () => {
   const login = () =>
     new Promise(resolve =>
       firebase
@@ -23,4 +23,4 @@ const facebookClient = () => {
   }
 }
 
-export default facebookClient()
+export default twitterClient()
