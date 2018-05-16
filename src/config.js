@@ -1,6 +1,6 @@
 export default {
     firebase: {
-        apiKey: "AIzaSyCgurPNR9lpLMRzUEW3tHwKenoxKPEcwLo",
+        apiKey: "{YOUR API KEY}",
         authDomain: "socialloginwithreact.firebaseapp.com",
         projectId: "socialloginwithreact",
     }
