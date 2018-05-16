@@ -1,7 +1,7 @@
-import firebase from './firebase'
+import firebase from 'firebase/app'
 import 'firebase/auth'
 
-const provider = new firebase.auth.FacebookAuthProvider()
+const provider = new firebase.auth.TwitterAuthProvider()
 
 const facebookClient = () => {
   const login = () =>

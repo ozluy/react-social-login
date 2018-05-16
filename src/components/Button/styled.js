@@ -11,7 +11,9 @@ export default styled.button`
   background-color: #999;
   color: #fff;
   cursor: pointer;
+  display: block;
   font-size: 16px;
+  margin: 20px auto;
   &:hover {
     background-color: #888;
   }
