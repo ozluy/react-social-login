@@ -1,0 +1,8 @@
+{
+  "presets": [
+    "@strv/react-scripts/babel"
+  ],
+  "plugins": [
+    "styled-components"
+  ]
+}

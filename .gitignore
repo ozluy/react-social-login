@@ -1,0 +1,16 @@
+# dependencies
+node_modules
+
+# production
+dist
+build
+
+# testing
+.nyc_output
+coverage
+
+# logs
+*.log
+
+# misc
+.DS_Store
