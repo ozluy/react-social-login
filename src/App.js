@@ -8,6 +8,8 @@ const App = ({
   loginedFacebook,
   loginWithTwitter,
   loginedTwitter,
+  loginWithGoogle,
+  loginedGoogle,
 }) => (
   <div className="App">
     <header className="App-header">
@@ -21,6 +23,9 @@ const App = ({
       <Button success={loginedTwitter} onClick={loginWithTwitter}>
         Login with Twitter
       </Button>
+      <Button success={loginedGoogle} onClick={loginWithGoogle}>
+        Login with Google
+      </Button>
     </main>
   </div>
 )
@@ -28,8 +33,10 @@ const App = ({
 App.propTypes = {
   loginWithFacebook: PropTypes.func.isRequired,
   loginWithTwitter: PropTypes.func.isRequired,
+  loginWithGoogle: PropTypes.func.isRequired,
   loginedFacebook: PropTypes.bool.isRequired,
   loginedTwitter: PropTypes.bool.isRequired,
+  loginedGoogle: PropTypes.bool.isRequired,
 }
 
 export default enhancers(App)
