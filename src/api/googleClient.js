@@ -1,9 +1,9 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-const provider = new firebase.auth.TwitterAuthProvider()
+const provider = new firebase.auth.GoogleAuthProvider()
 
-const twitterClient = () => {
+const googleClient = () => {
   const login = () =>
     new Promise(resolve =>
       firebase
@@ -23,4 +23,4 @@ const twitterClient = () => {
   }
 }
 
-export default twitterClient()
+export default googleClient()
