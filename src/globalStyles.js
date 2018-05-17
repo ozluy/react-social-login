@@ -1,11 +1,14 @@
 import { injectGlobal } from 'styled-components'
 
 export default injectGlobal`
+    html{
+        font-size: 62.5%;
+    }
     body{
-        margin: 0;
-        font-family: arial;
+        font-family: Roboto;
         padding: 0;
-        text-align: center;
+        max-width: 540px;
+        margin: 0 auto;
     }
 
 `
