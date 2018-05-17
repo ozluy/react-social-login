@@ -3,24 +3,28 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "cross-env NODE_PATH=src/ react-scripts start",
+    "build": "cross-env NODE_PATH=src/ react-scripts build",
+    "test": "cross-env NODE_PATH=src/ react-scripts test --env=jsdom",
     "precommit": "lint-staged"
   },
   "dependencies": {
     "@strv/react-scripts": "^0.1.0",
     "babel-plugin-styled-components": "^1.1.0",
     "firebase": "^5.0.2",
+    "formik": "^0.11.11",
+    "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.27.0",
-    "styled-components": "^3.0.0"
+    "styled-components": "^3.0.0",
+    "yup": "0.24.1"
   },
   "devDependencies": {
     "@strv/eslint-config-javascript": "7.8.0",
+    "cross-env": "^5.1.5",
     "eslint": "^4.19.0",
     "eslint-config-prettier": "^2.9.0",
     "husky": "^0.14.3",
@@ -37,14 +41,7 @@
     "trailingComma": "es5"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "prettier --write", "git add"],
+    "*.{json,css,md}": ["prettier --write", "git add"]
   }
 }
