@@ -32,10 +32,19 @@ After enabling Google, Facebook and Twitter sign-in medhods on firebase Authenti
 ```js 
 // src/config.js
 export default {
-    firebase: {
-        apiKey: "{YOUR_API_KEY}",
-        authDomain: "{YOUR_AUTH_DOMAIN}",
-        projectId: "{YOUR_PROJECT_ID}",
-    }
+  firebase: {
+    apiKey: '{APIKEY}',
+    authDomain: '{FIREBASE_PROJECT_ID}.firebaseapp.com',
+    projectId: '{FIREBASE_PROJECT_ID}',
+  },
+  instagram: {
+    clientId: '{CLIENT_ID}',
+    redirectUri:
+      process.env.NODE_ENV === 'production' // eslint-disable-line
+        ? 'https://{FIREBASE_PROJECT_ID}.firebaseapp.com/complete-register/'
+        : 'http://localhost:3000/complete-register/',
+    responseType: 'token',
+  },
 }
+
 ```
