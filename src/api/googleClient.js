@@ -11,11 +11,11 @@ const googleClient = () => {
         .signInWithPopup(provider)
         .then(result => {
           console.log(result)
-          resolve(true)
+          resolve({ success: true, data: result })
         })
         .catch(error => {
           console.log(error)
-          resolve(false)
+          resolve({ success: false, data: error })
         })
     )
   return {
