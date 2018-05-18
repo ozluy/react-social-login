@@ -9,13 +9,13 @@ const googleClient = () => {
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then(result => {
-          console.log(result)
-          resolve({ success: true, data: result })
+        .then(data => {
+          console.log(data)
+          resolve({ success: true, data })
         })
         .catch(error => {
           console.log(error)
-          resolve({ success: false, data: error })
+          resolve({ success: false, error })
         })
     )
   return {
