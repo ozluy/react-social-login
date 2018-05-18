@@ -29,6 +29,7 @@ See the section about deployment for more information.
 ## Config
 After enabling Google, Facebook and Twitter sign-in medhods on firebase Authentication page,  you have to change only the file below... 
 
+#### config.js
 ```js 
 // src/config.js
 export default {
@@ -46,5 +47,14 @@ export default {
     responseType: 'token',
   },
 }
+```
 
+##### index.html
+```js
+//public/index.html
+<script type="text/javascript" src="https://platform.linkedin.com/in.js">
+    api_key: {LINKEDIN_API}
+    authorize: true
+    scope: r_basicprofile r_emailaddress
+  </script>
 ```
