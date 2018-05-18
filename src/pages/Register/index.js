@@ -8,6 +8,7 @@ const App = ({
   loginWithTwitter,
   loginWithGoogle,
   loginWithInstagram,
+  loginWithLinkedIn,
 }) => (
   <div>
     <main>
@@ -32,6 +33,11 @@ const App = ({
         data-text="Login with Instagram"
         onClick={loginWithInstagram}
       />
+      <Button
+        label="Login with LinkedIn"
+        data-text="Login with LinkedIn"
+        onClick={loginWithLinkedIn}
+      />
     </main>
   </div>
 )
@@ -41,6 +47,7 @@ App.propTypes = {
   loginWithTwitter: PropTypes.func.isRequired,
   loginWithGoogle: PropTypes.func.isRequired,
   loginWithInstagram: PropTypes.func.isRequired,
+  loginWithLinkedIn: PropTypes.func.isRequired,
 }
 
 export default enhancers(App)
