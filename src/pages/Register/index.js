@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import enhancers from './enhancers'
 import Button from 'components/Button'
+import LoadingIndicator from 'components/LoadingIndicator'
 
 const App = ({
   loginWithFacebook,
@@ -9,6 +10,7 @@ const App = ({
   loginWithGoogle,
   loginWithInstagram,
   loginWithLinkedIn,
+  loading,
 }) => (
   <div>
     <main>
@@ -38,6 +40,7 @@ const App = ({
         data-text="Login with LinkedIn"
         onClick={loginWithLinkedIn}
       />
+      {loading && <LoadingIndicator />}
     </main>
   </div>
 )
@@ -48,6 +51,7 @@ App.propTypes = {
   loginWithGoogle: PropTypes.func.isRequired,
   loginWithInstagram: PropTypes.func.isRequired,
   loginWithLinkedIn: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 }
 
 export default enhancers(App)
