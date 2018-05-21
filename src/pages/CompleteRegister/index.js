@@ -14,6 +14,7 @@ const CompleteRegister = ({ register }) => (
         email: register.registerData.email || '',
         firstName: register.registerData.firstName || '',
         lastName: register.registerData.lastName || '',
+        picture: register.registerData.picture,
         jobTitle: '',
       }}
       onSubmit={(values, { setSubmitting }) => {
@@ -41,6 +42,9 @@ const CompleteRegister = ({ register }) => (
         handleBlur,
       }) => (
         <form onSubmit={handleSubmit}>
+          {values.picture && (
+            <img width={100} alt="Profile" src={values.picture} />
+          )}
           <Input
             name="email"
             type="text"
