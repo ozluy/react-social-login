@@ -9,6 +9,11 @@ export default injectGlobal`
         padding: 0;
         max-width: 540px;
         margin: 0 auto;
+        padding: 30px;
+    }
+    form img{
+        margin: 0 auto;
+        display: block;
     }
 
 `
