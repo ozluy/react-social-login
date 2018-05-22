@@ -2,6 +2,8 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 const provider = new firebase.auth.GoogleAuthProvider()
+provider.addScope('https://www.googleapis.com/auth/userinfo.profile')
+provider.addScope('https://www.googleapis.com/auth/userinfo.email')
 
 const googleClient = () => {
   const login = () =>

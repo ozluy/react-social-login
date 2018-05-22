@@ -2,6 +2,7 @@ import firebase from './firebase'
 import 'firebase/auth'
 
 const provider = new firebase.auth.FacebookAuthProvider()
+provider.addScope('email')
 
 const facebookClient = () => {
   const login = () =>
