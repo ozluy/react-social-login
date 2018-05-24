@@ -1,4 +1,4 @@
-import { compose, withHandlers, withState } from 'recompose'
+import { compose, withHandlers, withState, lifecycle } from 'recompose'
 import facebookClient from 'api/facebookClient'
 import twitterClient from 'api/twitterClient'
 import googleClient from 'api/googleClient'
@@ -9,6 +9,31 @@ import { withRegister } from 'common/registerContextAPI'
 
 export default compose(
   withRegister,
+  lifecycle({
+    componentDidMount() {
+      const setUserData = async () => {
+        if (this.props.location.hash) {
+          const accessToken = this.props.location.hash.split('=')[1]
+          const request = await instagramClient.getUserData(accessToken)
+          if (request.success) {
+            const instaData = request.data.data
+            const fullName = instaData.full_name.split(' ')
+            this.props.register.setRegisterData({
+              firstName: fullName[0],
+              lastName: fullName[1],
+              id: instaData.id,
+              picture: instaData.profile_picture,
+              email: instaData.email,
+              accessToken,
+              providerId: 'instagram.com',
+            })
+            history.push('/complete-register')
+          }
+        }
+      }
+      setUserData()
+    },
+  }),
   withState('loading', 'setLoading', false),
   withHandlers({
     loginWithFacebook: ({ register, setLoading }) => async () => {
