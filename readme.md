@@ -1,4 +1,14 @@
-## Avaliable scripts
+# Social Login
+
+  <ul>
+    <li><a href="#google">Google</a></li>
+    <li><a href="#facebook">Facebook</a></li>
+    <li><a href="#twitter">Twitter</a></li>
+    <li><a href="#linkedin">LinkedIn</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+  </ul>
+
+# Avaliable scripts
 
 ### yarn install
 
@@ -7,7 +17,7 @@ Install node modules
 ### yarn start
 
 Runs the app in the development mode.
-Open https://localhost:3000 to view it in the browser. Facebook SDK only works with __https__ so be sure that url set to `https`
+Open https://localhost:3000 to view it in the browser. Facebook SDK only works with **https** so be sure that url set to `https`
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
@@ -56,7 +66,7 @@ export default {
 }
 ```
 
-##### index.html
+#### index.html
 
 ```js
 //public/index.html
@@ -87,3 +97,49 @@ export default {
   }(document, 'script', 'facebook-jssdk'));
 </script>
 ```
+
+# Detailed Info for auths
+
+You can set auth for Google, Facebook and Twitter with Firebase Spark Pricing Plan which is **free**. For LinkedIn and Instagram auths you must upgrade to **paid** pricing plan to Blaze(pay as you go). You can check social login samples on <a href="https://github.com/ozluy/react-social-login"> github.com/ozluy/react-social-login </a>.
+
+## Google
+
+Firebase provides you to access basic and additional user info (by using scopes).
+
+For more info check step by step Firebase docs for <a href="https://firebase.google.com/docs/auth/web/google-signin">Authenticate Using Google Sign-In with JavaScript</a>
+
+## Facebook
+
+#### With Facebook SDK
+
+Facebook provides SDK for Web which you can access basic and additional user info (by using scopes).
+
+For more info check step by step Facebook developers docs for <a href="https://developers.facebook.com/docs/facebook-login/web/">Facebook Login for the Web with the JavaScript SDK</a>
+
+#### With Firebase
+
+Firebase provides you to access basic and additional user info (by using scopes).
+
+For more info check step by step Firebase docs for <a href="https://firebase.google.com/docs/auth/web/facebook-login">Authenticate Using Facebook Login with JavaScript</a>
+
+## Twitter
+
+Firebase provides you to access basic and additional user info (by using scopes).
+
+For more info check step by step Firebase docs for <a href="https://firebase.google.com/docs/auth/web/twitter-login">Authenticate Using Twitter in JavaScript</a>
+
+## LinkedIn
+
+#### LinkedIn SDK
+
+LinkedIn JavaScript SDK provides you to access basic and additional user info (by using scopes).
+
+For more info check step by step LinkedIn developers docs for <a href="https://developer.linkedin.com/docs/getting-started-js-sdk">Getting Started with the JavaScript SDK</a>
+
+## Instagram
+
+#### Instagram Client-Side (Implicit) Authentication
+
+Instagram Client-Side (Implicit) Authentication provides you basic profile information(e.g: first_name, last_name, bio...). All permissions require approval to be used out of Sandbox, you have wait for approval for that. You cant get email of user until you got approved.
+
+For more info check step by step Instagram developers docs for <a href="https://www.instagram.com/developer/authentication/">Client-Side (Implicit) Authentication</a>
