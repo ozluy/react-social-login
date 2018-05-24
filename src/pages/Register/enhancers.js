@@ -13,7 +13,7 @@ export default compose(
   withHandlers({
     loginWithFacebook: ({ register, setLoading }) => async () => {
       setLoading(true)
-      const loginRequest = await facebookClient.login()
+      const loginRequest = await facebookClient.loginWithFirebase()
       if (loginRequest.success) {
         const facebookData = loginRequest.data
         const dataForRegister = {
@@ -23,6 +23,24 @@ export default compose(
           picture: facebookData.additionalUserInfo.profile.picture.data.url,
           accessToken: facebookData.credential.accessToken,
           providerId: facebookData.credential.providerId,
+        }
+        setLoading(false)
+        register.setRegisterData(dataForRegister)
+        history.push('/complete-register')
+      }
+    },
+    loginWithFacebookSDK: ({ register, setLoading }) => async () => {
+      setLoading(true)
+      const loginRequest = await facebookClient.login()
+      if (loginRequest.success) {
+        const facebookData = loginRequest.data
+        const dataForRegister = {
+          email: facebookData.email,
+          firstName: facebookData.first_name,
+          lastName: facebookData.last_name,
+          picture: facebookData.picture.data.url,
+          accessToken: facebookData.accessToken,
+          providerId: 'facebook.com',
         }
         setLoading(false)
         register.setRegisterData(dataForRegister)

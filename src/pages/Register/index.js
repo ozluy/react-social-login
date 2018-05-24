@@ -5,6 +5,7 @@ import Button from 'components/Button'
 import LoadingIndicator from 'components/LoadingIndicator'
 
 const App = ({
+  loginWithFacebookSDK,
   loginWithFacebook,
   loginWithTwitter,
   loginWithGoogle,
@@ -16,8 +17,13 @@ const App = ({
     <main>
       <h1>Social Login</h1>
       <Button
-        label="Login with Facebook"
-        data-text="Login with Facebook"
+        label="Login with Facebook SDK"
+        data-text="Login with Facebook SDK"
+        onClick={loginWithFacebookSDK}
+      />
+      <Button
+        label="Login Facebook with Firebase"
+        data-text="Login Facebook with Firebase"
         onClick={loginWithFacebook}
       />
       <Button
@@ -46,6 +52,7 @@ const App = ({
 )
 
 App.propTypes = {
+  loginWithFacebookSDK: PropTypes.func.isRequired,
   loginWithFacebook: PropTypes.func.isRequired,
   loginWithTwitter: PropTypes.func.isRequired,
   loginWithGoogle: PropTypes.func.isRequired,
