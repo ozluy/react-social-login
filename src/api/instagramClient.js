@@ -11,6 +11,27 @@ const instagramClient = {
       '_self'
     )
   },
+  getUserData: accessToken =>
+    new Promise(resolve => {
+      fetch(
+        `https://api.instagram.com/v1/users/self/?access_token=${accessToken}`
+      )
+        .then(response => {
+          if (response.ok) {
+            return response
+          }
+          throw Error(response.statusText)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          resolve({ success: true, data })
+        })
+        .catch(error => {
+          console.log(error)
+          resolve({ success: false, error })
+        })
+    }),
 }
 
 export default instagramClient
