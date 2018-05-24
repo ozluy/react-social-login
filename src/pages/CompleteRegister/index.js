@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import enhancers from './enhancers'
 import { Formik } from 'formik'
 import Yup from 'yup'
 import Input from 'components/Input'
 import Button from 'components/Button'
+import enhancers from './enhancers'
 
 const CompleteRegister = ({ register }) => (
   <div>
