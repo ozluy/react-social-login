@@ -100,7 +100,7 @@ export default {
 
 # Detailed Info for auths
 
-You can set auth for Google, Facebook and Twitter with Firebase Spark Pricing Plan which is **free**. For LinkedIn and Instagram auths you must upgrade to **paid** pricing plan to Blaze(pay as you go). You can check social login samples on <a href="https://github.com/ozluy/react-social-login"> github.com/ozluy/react-social-login </a>.
+You can set auth for Google, Facebook and Twitter with Firebase Spark Pricing Plan which is **free**. For LinkedIn and Instagram auths you must upgrade to **paid** pricing plan to Blaze(pay as you go).
 
 ## Google
 
